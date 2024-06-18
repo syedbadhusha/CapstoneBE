@@ -20,18 +20,16 @@
 ## API END POINTS
 
     -- Registration
-        - Update User or Create User - 'POST /api/user'
-        - Sending Activation Mail - 'POST /api/user/activatemail'
-        - Update Activation flag - 'POST /api/user/activate'
+        - Update User or Create User and send Activation mail - 'POST /api/users'
+        - Activate User - 'PUT /api/users/useractivation'
     -- Forgot Password
-        - Validate User - 'POST /api/user/uservalidate:id'
-        - Sending OTP Via Mail - 'POST /api/user/sendotp:id'
-        - Validate OTP - 'POST /api/user/vaidateotp:id'
-        - Update New Password - 'POST /api/user/updatenewpassword:id'
+        - Sending OTP Via Mail and valdate UserName- 'POST /api/users/sendforgotmail'
+        - Update New Password - 'POST /api/user/resetPassword'
     -- Login
-        - Validate user - 'POST /api/user/login:id'
+        - Current User - 'GET /api/users/currentuser'
+        - Login user and Create Token- 'POST /api/users/login'
     -- LogOut
-        - Closing Session - 'POST /api/user/logout:id'
+        - Delete Cookie and Logout - 'GET /api/user/logout:id'
     -- Product List
         - Fetching Product List - 'GET /api/user/users'
     -- Cart

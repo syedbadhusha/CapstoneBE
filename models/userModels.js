@@ -6,6 +6,11 @@ const userSchema = mongoose.Schema({
     passwordHash:String,
     firstName:String,
     lastName:String,
+    activated:{
+        type:Boolean,
+        default:false
+    },
+    passwordChangeLink:String,
     deliveryAddress:{
         type:String,
         default:'Unknown'
