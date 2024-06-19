@@ -12,7 +12,7 @@ const cartController = {
             if(userRole !== 'user'){
                 return res.status(500).json({message:`Hi ${user.firstName}, You Don't Have Access`})
             }
-            const newCartDetail = new cartSchema({
+            const newCartDetail = new Cart({
                 items,
                 userId
             })

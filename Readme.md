@@ -38,14 +38,13 @@
     -- Cart
 
         - Creating Cart - 'POST /api/cart/'
-        - Fetchin Cart Item - 'GET /api/cart/Items'
+        - Fetching Cart Item - 'GET /api/cart/Items'
         - Add Item - 'PUT /api/cart/additem'
         - Remove Item - 'PUT /api/cart/removeitem'
         - change status to ordered 'PUT /api/cart/statustoordered'
 
     -- Orders
-        - Place Order - 'POST /api/order'
-        - Update delivery Details - 'POST /api/order/updateaddress:orderid'
+        - Place Order - 'POST /api/orders'
     -- Payments
         - Validate User
     
