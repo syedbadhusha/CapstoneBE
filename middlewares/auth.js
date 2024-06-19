@@ -11,7 +11,7 @@ const auth = {
             //Verify the token
             try{
                 const decodedToken = jwt.verify(token,config.JWT_Secret)
-                req.userId = decodedToken.id;
+                req.userInfo = decodedToken.id,decodedToken.userRole;
                 res.cookie('token',token,{sameSite:'strict'})
                 next();
             }catch(error){

@@ -30,12 +30,19 @@
         - Login user and Create Token- 'POST /api/users/login'
     -- LogOut
         - Delete Cookie and Logout - 'GET /api/user/logout:id'
-    -- Product List
-        - Fetching Product List - 'GET /api/user/users'
+    -- items
+        - Create item - 'Post /api/items/create'
+        - Delete Item - 'Delete /api/items/delete'
+        - Update Item - 'Put /api/items/update'
+        - Fetch All Item - 'Get /api/items'
     -- Cart
+
+        - Creating Cart - 'POST /api/cart/'
         - Fetchin Cart Item - 'GET /api/cart/Items'
-        - Add Item - 'POST /api/cart/item:itemid'
-        - Remove Item - 'POST /api/cart/item:cartitemid'
+        - Add Item - 'PUT /api/cart/additem'
+        - Remove Item - 'PUT /api/cart/removeitem'
+        - change status to ordered 'PUT /api/cart/statustoordered'
+
     -- Orders
         - Place Order - 'POST /api/order'
         - Update delivery Details - 'POST /api/order/updateaddress:orderid'

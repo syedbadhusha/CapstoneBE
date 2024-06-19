@@ -105,7 +105,7 @@ const userController = {
     },  
     currentUser:async (req,res)=>{
         try{
-            const userId  = req.userId;
+            const userId  = req.userInfo.id;
             const user = await User.findById(userId).select('-passwordHash -__v -_id');
             if(!user){
                 return res.status(500).json({message:'User Not Found'})
