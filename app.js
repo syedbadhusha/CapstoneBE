@@ -7,6 +7,21 @@ const itemRouter = require('./routers/ItemRouters');
 const orderRouters = require('./routers/orderRouters');
 
 const app = express();
+const cors = require('cors');
+const whitelist = ['http://localhost:5173']
+app.use(cors(
+    {
+        origin(reqOrigin, callback){
+            if(reqOrigin && whitelist.indexOf(reqOrigin) != -1){
+                callback(null, true)
+            }else{
+                callback(null, true)
+            }
+        },
+        credentials:true
+    }
+));
+
 app.use(cookieParser());
 app.use(morgan());
 app.use(express.json());

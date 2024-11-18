@@ -4,7 +4,7 @@ const {ObjectId} = require('mongodb')
 const cartSchema = new mongoose.Schema({
     date:{
         type:Date,
-        default:Date()
+        default: () => new Date(),
     },
     items:Array,
     cartStatus:{

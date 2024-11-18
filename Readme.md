@@ -34,14 +34,17 @@
         - Create item - 'Post /api/items/create'
         - Delete Item - 'Delete /api/items/delete'
         - Update Item - 'Put /api/items/update'
+        - Fetch item  - 'Get /api/items/item'
         - Fetch All Item - 'Get /api/items'
     -- Cart
 
-        - Creating Cart - 'POST /api/cart/'
-        - Fetching Cart Item - 'GET /api/cart/Items'
-        - Add Item - 'PUT /api/cart/additem'
-        - Remove Item - 'PUT /api/cart/removeitem'
-        - change status to ordered 'PUT /api/cart/statustoordered'
+        - Creating Cart and adding item in cart - 'POST /api/carts'
+        - increase qty in specific item - 'POST /api/carts/incrqty'
+        - increase qty in specific item - 'POST /api/carts/decrqty'
+        - Remove Item - 'POST /api/carts/removeitem'
+        - Fetching Cart Item - 'GET /api/carts/Items'
+        - change status to ordered 'POST /api/carts/statustoordered'
+        - get single cart item - 'GET /api/carts/item' 
 
     -- Orders
         - Place Order - 'POST /api/orders'

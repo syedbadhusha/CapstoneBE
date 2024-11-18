@@ -17,7 +17,7 @@ const userController = {
     register: async(req,res)=>{
         const activationLink = req.body.activationLink
         try{
-        const {userName,password,firstName,lastName,deliveryAddress} = req.body
+        const {userName,password,firstName,lastName,deliveryAddress,userRole} = req.body
             const user = await User.findOne({userName})
             if(user){
                 return res.status(400).json({message:'user already exist'})
@@ -28,23 +28,24 @@ const userController = {
                 subject: "Your Activation link for E - Cart",
                 text: `Please find your link here ${activationLink}`,
               };  
-              try{
                 await transporter.sendMail(mailing)
-              }catch(error){
-                return res.status(500).json({message:"Please Check your Mail ID"})
-              }             
             const passwordHash = await bCrypt.hash(password,10)
             const newUser = new User({
                 userName, 
                 passwordHash,
                 firstName,
                 lastName,
-                deliveryAddress
+                deliveryAddress,
+                userRole
             })
-            const savedUser = await newUser.save();
-            res.status(201).json({message:'User Created Successfully',user:savedUser})
-        }catch(error){
-            res.status(500).json({message:error.message})
+            try{
+              const savedUser = await newUser.save();
+              res.status(200).json({ message: "User Created Successfully", user: savedUser }); 
+            }catch (error) {
+             return res.status(500).json({ message: error.message });
+          }
+              }catch(error){
+            res.status(500).json({message:'Please Enter valid Mail ID'})
         }
     },
     verifyAccount: async(req,res)=>{

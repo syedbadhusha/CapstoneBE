@@ -11,10 +11,27 @@ const userSchema = mongoose.Schema({
         default:false
     },
     passwordChangeLink:String,
-    deliveryAddress:{
+    deliveryAddress1:{
         type:String,
         default:'Unknown'
     },
+    deliveryAddress2:{
+        type:String,
+        default:'Unknown'
+    },
+    deliveryAddress3:{
+        type:String,
+        default:'Unknown'
+    },
+    deliveryAddress4:{
+        type:String,
+        default:'Unknown'
+    },
+    pincode:{
+        type:String,
+        default:'Unknown'
+    },
+
     userRole:{
         type:String,
         enum:['admin','user'],
