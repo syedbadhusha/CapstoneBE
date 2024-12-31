@@ -6,7 +6,10 @@ const cartSchema = new mongoose.Schema({
         type:Date,
         default: () => new Date(),
     },
-    items:Array,
+    items:{
+        type:Array,
+        default:[]
+    },
     cartStatus:{
         type:String,
         enum:['Pending','Ordered'],
